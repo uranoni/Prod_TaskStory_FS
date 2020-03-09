@@ -1,9 +1,8 @@
-import  { createContext } from 'react'
-
+import { createContext } from 'react';
 
 const DrawContext = createContext({
-    drawstatus:false,
-    toggleDrawer:()=>{}
+	drawstatus: false,
+	toggleDrawer: () => {}
 });
 
 export default DrawContext;
