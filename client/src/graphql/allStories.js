@@ -1,34 +1,30 @@
 import { gql } from "apollo-boost";
 
 const stories = gql`
-  {
-    story(id: "74ea68ff-8b66-4950-b8db-47f163a978c6") {
-      title
-      usertypes {
-        edges {
-          node {
+ {
+  story(id: "74ea68ff-8b66-4950-b8db-47f163a978c6") {
+    id
+    createdAt
+    nodeId
+    title
+    storydesc
+    imgsrc
+    usertypes {
+      nodes {
+        id
+        title
+        useractivities {
+          nodes {
             id
             title
-            useractivities {
-              edges {
-                node {
-                  id
-                  title
-                  userstepsByActivityId {
-                    edges {
-                      node {
-                        id
-                        title
-                        usertasksByStepId {
-                          edges {
-                            node {
-                              title
-                              id
-                            }
-                          }
-                        }
-                      }
-                    }
+            userstepsByActivityId {
+              nodes {
+                id
+                title
+                usertasksByStepId {
+                  nodes {
+                    id
+                    title
                   }
                 }
               }
@@ -38,6 +34,8 @@ const stories = gql`
       }
     }
   }
+}
+
 `;
 
 export default stories;

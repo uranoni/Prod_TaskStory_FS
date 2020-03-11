@@ -12,13 +12,23 @@ const CreateStory = () => {
   const [state, setstate] = useState({});
   useEffect(async () => {
     const result = await client.query({ query: allstories });
-    console.log(result);
-    setstate(result.data);
-  }, {});
-
+    console.log(result.data.story);
+    setstate({ story: result.data.story });
+  }, []);
+  console.log(state)
+  let ren = () => {
+    if (state.story) {
+      return state.story.id
+    }
+  }
   return (
     <Fragment>
       <Grid container>
+
+        {state.story && state.story.id}
+        {ren()}
+
+        {/*         
         <Grid direction="column">
           <Grid direction="row">
             <UserType />
@@ -26,7 +36,7 @@ const CreateStory = () => {
           <UserActivity />
           <UserStep />
           <UserTask />
-        </Grid>
+        </Grid> */}
       </Grid>
     </Fragment>
   );
