@@ -36,10 +36,10 @@ export default function DrawerLeft() {
         ))}
         <ListItem>
           <DrawContext.Consumer>
-        {(value)=>(<Button onClick={()=>value.toggleDrawer()}>Return</Button>)}
+            {(value) => (<Button variant="contained" color="primary" onClick={() => value.toggleDrawer()}>Return</Button>)}
           </DrawContext.Consumer>
         </ListItem>
-        
+
       </List>
     </div>
   );
@@ -48,12 +48,12 @@ export default function DrawerLeft() {
   return (
     <div>
       <DrawContext.Consumer>
-        {value => (         
-        <Drawer open={value.drawstatus} >
-        {sideList('left')}
-      </Drawer>)}
+        {value => (
+          <Drawer open={value.drawstatus} >
+            {sideList('left')}
+          </Drawer>)}
 
-    </DrawContext.Consumer>
+      </DrawContext.Consumer>
     </div>
   );
 }

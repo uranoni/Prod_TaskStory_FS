@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import Paper from "@material-ui/core/Paper";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 
 const UserType = ({ title }) => {
   const style = useStyles();
-  const [state, setstate] = useState();
+  // const [state, setstate] = useState();
   return (
     <Fragment>
       <Paper className={style.paper} elevation={3}>
