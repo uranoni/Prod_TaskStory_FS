@@ -2,9 +2,9 @@
 const useStyles = {
     container: {
         display: "inline-flex",
-        width: "5000px",
+        // width: "5000px",
         height: "100%",
-        "overflowX": "auto",
+
     },
     userbox: {
         width: "800px",

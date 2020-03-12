@@ -31,53 +31,56 @@ const CreateStory = () => {
     <Fragment>
       <CssBaseline />
       {/* container */}
-      <Box style={useStyles.container}>
-        {state.story && state.story.usertypes.nodes.map((e) => (
-          <Box key={e.id} style={useStyles.userbox}>
-            <Box style={useStyles.userboxtop}>
-              <UserType title={e.title} />
-            </Box>
-            <Box style={useStyles.userboxbottom}>
+      <Box css={{ width: "100 %", "overflowX": "scroll" }} >
+        <Box style={useStyles.container}>
+          {state.story && state.story.usertypes.nodes.map((e) => (
+            <Box key={e.id} style={useStyles.userbox}>
+              <Box style={useStyles.userboxtop}>
+                <UserType title={e.title} />
+              </Box>
+              <Box style={useStyles.userboxbottom}>
 
-              {/* active渲染位置 */}
-              {e.useractivities.nodes.map((el) => (
-                <Box key={el.id} style={useStyles.activitybox} css={{
-                  width: `calc(100% / ${e.useractivities.nodes.length})`
-                }}>
-                  <Box style={useStyles.activitytop}>
-                    <UserActivity title={el.title} />
-                  </Box>
-                  <Box style={useStyles.activitybottom}>
+                {/* active渲染位置 */}
+                {e.useractivities.nodes.map((el) => (
+                  <Box key={el.id} style={useStyles.activitybox} css={{
+                    width: `calc(100% / ${e.useractivities.nodes.length})`
+                  }}>
+                    <Box style={useStyles.activitytop}>
+                      <UserActivity title={el.title} />
+                    </Box>
+                    <Box style={useStyles.activitybottom}>
 
-                    {/* step渲染位置 */}
-                    {el.userstepsByActivityId.nodes.map((elm) => (
-                      <Box key={elm.id} style={useStyles.stepbox} css={{
-                        width: `calc(100% / ${el.userstepsByActivityId.nodes.length})`
-                      }}>
-                        <Box style={useStyles.steptop}>
-                          <UserStep title={elm.title} />
-                        </Box>
-                        <Box style={useStyles.stepbottom}>
+                      {/* step渲染位置 */}
+                      {el.userstepsByActivityId.nodes.map((elm) => (
+                        <Box key={elm.id} style={useStyles.stepbox} css={{
+                          width: `calc(100% / ${el.userstepsByActivityId.nodes.length})`
+                        }}>
+                          <Box style={useStyles.steptop}>
+                            <UserStep title={elm.title} />
+                          </Box>
+                          <Box style={useStyles.stepbottom}>
 
-                          {/* task渲染位置 */}
-                          {elm.usertasksByStepId.nodes.map((elme) => (
-                            <Box key={elme.id} style={useStyles.stepbox} css={{
-                              width: `calc(100% / ${elm.usertasksByStepId.nodes.length})`
-                            }}>
-                              <Box style={useStyles.steptop}>
-                                <UserTask title={elme.title} />
+                            {/* task渲染位置 */}
+                            {elm.usertasksByStepId.nodes.map((elme) => (
+                              <Box key={elme.id} style={useStyles.stepbox} css={{
+                                width: `calc(100% / ${elm.usertasksByStepId.nodes.length})`
+                              }}>
+                                <Box style={useStyles.steptop}>
+                                  <UserTask title={elme.title} />
+                                </Box>
                               </Box>
-                            </Box>
-                          ))}
+                            ))}
+                          </Box>
                         </Box>
-                      </Box>
-                    ))}
+                      ))}
+                    </Box>
                   </Box>
-                </Box>
-              ))}
+                ))}
+              </Box>
             </Box>
-          </Box>
-        ))}
+          ))}
+        </Box>
+
       </Box>
 
     </Fragment >
