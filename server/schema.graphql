@@ -1,0 +1,840 @@
+"""All input for the create `Story` mutation."""
+input CreateStoryInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Story` to be created by this mutation."""
+  story: StoryInput!
+}
+
+"""The output of our create `Story` mutation."""
+type CreateStoryPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Story` that was created by this mutation."""
+  story: Story
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `Useractivity` mutation."""
+input CreateUseractivityInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Useractivity` to be created by this mutation."""
+  useractivity: UseractivityInput!
+}
+
+"""The output of our create `Useractivity` mutation."""
+type CreateUseractivityPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Useractivity` that was created by this mutation."""
+  useractivity: Useractivity
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Usertype` that is related to this `Useractivity`."""
+  usertype: Usertype
+}
+
+"""All input for the create `Usertype` mutation."""
+input CreateUsertypeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Usertype` to be created by this mutation."""
+  usertype: UsertypeInput!
+}
+
+"""The output of our create `Usertype` mutation."""
+type CreateUsertypePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Usertype` that was created by this mutation."""
+  usertype: Usertype
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Story` that is related to this `Usertype`."""
+  story: Story
+}
+
+"""
+A point in time as described by the [ISO
+8601](https://en.wikipedia.org/wiki/ISO_8601) standard. May or may not include a timezone.
+"""
+scalar Datetime
+
+"""All input for the `deleteStoryByNodeId` mutation."""
+input DeleteStoryByNodeIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Story` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteStory` mutation."""
+input DeleteStoryInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: UUID!
+}
+
+"""The output of our delete `Story` mutation."""
+type DeleteStoryPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Story` that was deleted by this mutation."""
+  story: Story
+  deletedStoryNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteUseractivityByNodeId` mutation."""
+input DeleteUseractivityByNodeIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Useractivity` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteUseractivity` mutation."""
+input DeleteUseractivityInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: UUID!
+}
+
+"""The output of our delete `Useractivity` mutation."""
+type DeleteUseractivityPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Useractivity` that was deleted by this mutation."""
+  useractivity: Useractivity
+  deletedUseractivityNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Usertype` that is related to this `Useractivity`."""
+  usertype: Usertype
+}
+
+"""All input for the `deleteUsertypeByNodeId` mutation."""
+input DeleteUsertypeByNodeIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Usertype` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteUsertype` mutation."""
+input DeleteUsertypeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: UUID!
+}
+
+"""The output of our delete `Usertype` mutation."""
+type DeleteUsertypePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Usertype` that was deleted by this mutation."""
+  usertype: Usertype
+  deletedUsertypeNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Story` that is related to this `Usertype`."""
+  story: Story
+}
+
+"""
+The root mutation type which contains root level fields which mutate data.
+"""
+type Mutation {
+  """Creates a single `Story`."""
+  createStory(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateStoryInput!
+  ): CreateStoryPayload
+
+  """Creates a single `Useractivity`."""
+  createUseractivity(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateUseractivityInput!
+  ): CreateUseractivityPayload
+
+  """Creates a single `Usertype`."""
+  createUsertype(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateUsertypeInput!
+  ): CreateUsertypePayload
+
+  """Updates a single `Story` using its globally unique id and a patch."""
+  updateStoryByNodeId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateStoryByNodeIdInput!
+  ): UpdateStoryPayload
+
+  """Updates a single `Story` using a unique key and a patch."""
+  updateStory(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateStoryInput!
+  ): UpdateStoryPayload
+
+  """
+  Updates a single `Useractivity` using its globally unique id and a patch.
+  """
+  updateUseractivityByNodeId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateUseractivityByNodeIdInput!
+  ): UpdateUseractivityPayload
+
+  """Updates a single `Useractivity` using a unique key and a patch."""
+  updateUseractivity(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateUseractivityInput!
+  ): UpdateUseractivityPayload
+
+  """Updates a single `Usertype` using its globally unique id and a patch."""
+  updateUsertypeByNodeId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateUsertypeByNodeIdInput!
+  ): UpdateUsertypePayload
+
+  """Updates a single `Usertype` using a unique key and a patch."""
+  updateUsertype(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateUsertypeInput!
+  ): UpdateUsertypePayload
+
+  """Deletes a single `Story` using its globally unique id."""
+  deleteStoryByNodeId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteStoryByNodeIdInput!
+  ): DeleteStoryPayload
+
+  """Deletes a single `Story` using a unique key."""
+  deleteStory(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteStoryInput!
+  ): DeleteStoryPayload
+
+  """Deletes a single `Useractivity` using its globally unique id."""
+  deleteUseractivityByNodeId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteUseractivityByNodeIdInput!
+  ): DeleteUseractivityPayload
+
+  """Deletes a single `Useractivity` using a unique key."""
+  deleteUseractivity(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteUseractivityInput!
+  ): DeleteUseractivityPayload
+
+  """Deletes a single `Usertype` using its globally unique id."""
+  deleteUsertypeByNodeId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteUsertypeByNodeIdInput!
+  ): DeleteUsertypePayload
+
+  """Deletes a single `Usertype` using a unique key."""
+  deleteUsertype(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteUsertypeInput!
+  ): DeleteUsertypePayload
+}
+
+"""An object with a globally unique `ID`."""
+interface Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+}
+
+"""The root query type which gives access points into the data universe."""
+type Query implements Node {
+  """
+  Exposes the root query type nested one level down. This is helpful for Relay 1
+  which can only query top level fields if they are in a particular form.
+  """
+  query: Query!
+
+  """
+  The root query type must be a `Node` to work well with Relay 1 mutations. This just resolves to `query`.
+  """
+  nodeId: ID!
+
+  """Fetches an object given its globally unique `ID`."""
+  node(
+    """The globally unique `ID`."""
+    nodeId: ID!
+  ): Node
+
+  """Reads a set of `Story`."""
+  storiesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Story`."""
+    orderBy: [StoriesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: StoryCondition
+  ): [Story!]
+
+  """Reads a set of `Useractivity`."""
+  useractivitiesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Useractivity`."""
+    orderBy: [UseractivitiesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: UseractivityCondition
+  ): [Useractivity!]
+
+  """Reads a set of `Usertype`."""
+  usertypesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Usertype`."""
+    orderBy: [UsertypesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: UsertypeCondition
+  ): [Usertype!]
+  story(id: UUID!): Story
+  useractivity(id: UUID!): Useractivity
+  usertype(id: UUID!): Usertype
+
+  """Reads a single `Story` using its globally unique `ID`."""
+  storyByNodeId(
+    """The globally unique `ID` to be used in selecting a single `Story`."""
+    nodeId: ID!
+  ): Story
+
+  """Reads a single `Useractivity` using its globally unique `ID`."""
+  useractivityByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `Useractivity`.
+    """
+    nodeId: ID!
+  ): Useractivity
+
+  """Reads a single `Usertype` using its globally unique `ID`."""
+  usertypeByNodeId(
+    """The globally unique `ID` to be used in selecting a single `Usertype`."""
+    nodeId: ID!
+  ): Usertype
+}
+
+"""Methods to use when ordering `Story`."""
+enum StoriesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  TITLE_ASC
+  TITLE_DESC
+  STORYDESC_ASC
+  STORYDESC_DESC
+  IMGSRC_ASC
+  IMGSRC_DESC
+  CREATED_AT_ASC
+  CREATED_AT_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type Story implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: UUID!
+  title: String!
+  storydesc: String
+  imgsrc: String
+  createdAt: Datetime
+
+  """Reads and enables pagination through a set of `Usertype`."""
+  usertypesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Usertype`."""
+    orderBy: [UsertypesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: UsertypeCondition
+  ): [Usertype!]!
+}
+
+"""
+A condition to be used against `Story` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input StoryCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: UUID
+
+  """Checks for equality with the object’s `title` field."""
+  title: String
+
+  """Checks for equality with the object’s `storydesc` field."""
+  storydesc: String
+
+  """Checks for equality with the object’s `imgsrc` field."""
+  imgsrc: String
+
+  """Checks for equality with the object’s `createdAt` field."""
+  createdAt: Datetime
+}
+
+"""An input for mutations affecting `Story`"""
+input StoryInput {
+  id: UUID
+  title: String!
+  storydesc: String
+  imgsrc: String
+  createdAt: Datetime
+}
+
+"""
+Represents an update to a `Story`. Fields that are set will be updated.
+"""
+input StoryPatch {
+  id: UUID
+  title: String
+  storydesc: String
+  imgsrc: String
+  createdAt: Datetime
+}
+
+"""All input for the `updateStoryByNodeId` mutation."""
+input UpdateStoryByNodeIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Story` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Story` being updated.
+  """
+  patch: StoryPatch!
+}
+
+"""All input for the `updateStory` mutation."""
+input UpdateStoryInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Story` being updated.
+  """
+  patch: StoryPatch!
+  id: UUID!
+}
+
+"""The output of our update `Story` mutation."""
+type UpdateStoryPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Story` that was updated by this mutation."""
+  story: Story
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateUseractivityByNodeId` mutation."""
+input UpdateUseractivityByNodeIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Useractivity` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Useractivity` being updated.
+  """
+  patch: UseractivityPatch!
+}
+
+"""All input for the `updateUseractivity` mutation."""
+input UpdateUseractivityInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Useractivity` being updated.
+  """
+  patch: UseractivityPatch!
+  id: UUID!
+}
+
+"""The output of our update `Useractivity` mutation."""
+type UpdateUseractivityPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Useractivity` that was updated by this mutation."""
+  useractivity: Useractivity
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Usertype` that is related to this `Useractivity`."""
+  usertype: Usertype
+}
+
+"""All input for the `updateUsertypeByNodeId` mutation."""
+input UpdateUsertypeByNodeIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Usertype` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Usertype` being updated.
+  """
+  patch: UsertypePatch!
+}
+
+"""All input for the `updateUsertype` mutation."""
+input UpdateUsertypeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Usertype` being updated.
+  """
+  patch: UsertypePatch!
+  id: UUID!
+}
+
+"""The output of our update `Usertype` mutation."""
+type UpdateUsertypePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Usertype` that was updated by this mutation."""
+  usertype: Usertype
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Story` that is related to this `Usertype`."""
+  story: Story
+}
+
+"""Methods to use when ordering `Useractivity`."""
+enum UseractivitiesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  USERTYPE_ID_ASC
+  USERTYPE_ID_DESC
+  TITLE_ASC
+  TITLE_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type Useractivity implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: UUID!
+  usertypeId: UUID
+  title: String
+
+  """Reads a single `Usertype` that is related to this `Useractivity`."""
+  usertype: Usertype
+}
+
+"""
+A condition to be used against `Useractivity` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input UseractivityCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: UUID
+
+  """Checks for equality with the object’s `usertypeId` field."""
+  usertypeId: UUID
+
+  """Checks for equality with the object’s `title` field."""
+  title: String
+}
+
+"""An input for mutations affecting `Useractivity`"""
+input UseractivityInput {
+  id: UUID
+  usertypeId: UUID
+  title: String
+}
+
+"""
+Represents an update to a `Useractivity`. Fields that are set will be updated.
+"""
+input UseractivityPatch {
+  id: UUID
+  usertypeId: UUID
+  title: String
+}
+
+type Usertype implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: UUID!
+  storyId: UUID
+  title: String
+
+  """Reads a single `Story` that is related to this `Usertype`."""
+  story: Story
+
+  """Reads and enables pagination through a set of `Useractivity`."""
+  useractivitiesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Useractivity`."""
+    orderBy: [UseractivitiesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: UseractivityCondition
+  ): [Useractivity!]!
+}
+
+"""
+A condition to be used against `Usertype` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input UsertypeCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: UUID
+
+  """Checks for equality with the object’s `storyId` field."""
+  storyId: UUID
+
+  """Checks for equality with the object’s `title` field."""
+  title: String
+}
+
+"""An input for mutations affecting `Usertype`"""
+input UsertypeInput {
+  id: UUID
+  storyId: UUID
+  title: String
+}
+
+"""
+Represents an update to a `Usertype`. Fields that are set will be updated.
+"""
+input UsertypePatch {
+  id: UUID
+  storyId: UUID
+  title: String
+}
+
+"""Methods to use when ordering `Usertype`."""
+enum UsertypesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  STORY_ID_ASC
+  STORY_ID_DESC
+  TITLE_ASC
+  TITLE_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A universally unique identifier as defined by [RFC 4122](https://tools.ietf.org/html/rfc4122).
+"""
+scalar UUID
